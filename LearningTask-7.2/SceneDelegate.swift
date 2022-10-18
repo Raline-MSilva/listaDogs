@@ -18,7 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-//        let homeController = (window!.rootViewController as! UINavigationController).topViewController as! ListaDeRacasViewController
+        let API = DogsAPI()
+        
+        let homeController = window!.rootViewController as! ListaViewController
+        homeController.dogsAPI = API
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
